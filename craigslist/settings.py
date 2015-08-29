@@ -5,6 +5,8 @@ import djcelery
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+ERROR_DIR = os.path.join(BASE_DIR, 'scraper', 'error')
+
 SECRET_KEY = 'v1t!07#zj8=18kjdy-o@e@(@pc-9=*b11=8v2t$p)%jd-czb#2'
 
 DEBUG = True
@@ -78,6 +80,24 @@ USE_L10N = True
 USE_TZ = True
 
 STATIC_URL = '/static/'
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(BASE_DIR, 'log'),
+        },
+    },
+    'loggers': {
+        'craigslist': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+        }
+    }
+}
 
 BROKER_URL = 'redis://localhost:6379/0'
 

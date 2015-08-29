@@ -1,0 +1,30 @@
+starting test scraper scraper
+started webdriver
+found email input element
+sent topuzov.work@gmail.com to email input
+sleeping 5.46743195350478 seconds
+found password input element
+sent nihuya22! to password input
+sleeping 7.490318870408821 seconds
+found login button element
+clicked login button
+sleeping 5.471552830402454 seconds
+found home link element
+clicked home link
+sleeping 5.617310125068532 seconds
+found housing link element
+clicked housing link
+sleeping 8.229046207387745 seconds
+found minimum price input element
+sent 0 to minimum price input
+sleeping 5.0309519435815675 seconds
+found maximum price input element
+sent 2000 to maximum price input
+sleeping 7.142053014590448 seconds
+found bedrooms select element
+clicked bedrooms select
+sleeping 9.160291247194397 seconds
+found 2 postings link elements
+took screenshot as errors/2015-08-29T15:44:54.825398.png
+stoped webdriver
+stoped test scraper scraper
