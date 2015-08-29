@@ -88,3 +88,7 @@ class Webdriver(object):
         with open(path, 'w') as f:
             f.write(self.webdriver.page_source)
         log.debug('saved source as {}'.format(path))
+
+    def onerror(self):
+        self.screenshot()
+        self.source()

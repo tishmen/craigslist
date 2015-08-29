@@ -28,3 +28,352 @@ found 2 postings link elements
 took screenshot as errors/2015-08-29T15:44:54.825398.png
 stoped webdriver
 stoped test scraper scraper
+starting test scraper scraper
+started webdriver
+found email input element
+sent topuzov.work@gmail.com to email input
+sleeping 8.063400146088433 seconds
+found password input element
+sent nihuya22! to password input
+sleeping 7.284464010370321 seconds
+found login button element
+clicked login button
+sleeping 6.145008022733679 seconds
+found home link element
+clicked home link
+sleeping 9.121858574856756 seconds
+found housing link element
+clicked housing link
+sleeping 6.673121558459103 seconds
+found minimum price input element
+sent 0 to minimum price input
+sleeping 6.822172435509991 seconds
+found maximum price input element
+sent 2000 to maximum price input
+sleeping 6.80093964265497 seconds
+found bedrooms select element
+clicked bedrooms select
+sleeping 9.578551838683644 seconds
+found 2 postings link elements
+took screenshot as /home/milan/work/josh/craigslist/scraper/error/2015-08-29T18:15:53.857247.png
+saved source as /home/milan/work/josh/craigslist/scraper/error/2015-08-29T18:15:53.857247.html
+stoped webdriver
+stoped test scraper scraper
+starting test scraper scraper
+started webdriver
+found email input element
+sent topuzov.work@gmail.com to email input
+sleeping 5.47441886692536 seconds
+found password input element
+sent nihuya22! to password input
+sleeping 7.077049974362837 seconds
+found login button element
+clicked login button
+sleeping 8.446406973420018 seconds
+found home link element
+clicked home link
+sleeping 8.955720113266981 seconds
+found housing link element
+clicked housing link
+sleeping 7.4846156087581 seconds
+found minimum price input element
+sent 0 to minimum price input
+sleeping 9.123508314937393 seconds
+found maximum price input element
+sent 2000 to maximum price input
+sleeping 7.271088761502958 seconds
+found bedrooms select element
+clicked bedrooms select
+sleeping 6.296321474079397 seconds
+found 2 postings link elements
+scrolled to 0 posting element
+clicked 0 posting
+sleeping 6.0584172081147125 seconds
+found reply button element
+clicked reply button
+sleeping 9.160213636933818 seconds
+email not found
+got 0 results
+stoped webdriver
+stoped test scraper scraper
+starting test scraper
+started webdriver
+found email input element
+sent topuzov.work@gmail.com to email input
+sleeping 6.009988089584503 seconds
+found password input element
+sent nihuya22! to password input
+sleeping 8.683443377051379 seconds
+found login button element
+clicked login button
+sleeping 8.713385953487709 seconds
+found home link element
+clicked home link
+sleeping 8.411531688451248 seconds
+found housing link element
+clicked housing link
+sleeping 7.418904062693686 seconds
+found minimum price input element
+sent 0 to minimum price input
+sleeping 7.7337888833406225 seconds
+found maximum price input element
+sent 2000 to maximum price input
+sleeping 8.565097903538824 seconds
+found bedrooms select element
+clicked bedrooms select
+sleeping 6.306409806928736 seconds
+found 2 postings link elements
+scrolled to 0 posting element
+clicked 0 posting
+sleeping 7.212533385909205 seconds
+found reply button element
+clicked reply button
+sleeping 9.77356061149805 seconds
+took screenshot as /home/milan/work/josh/craigslist/scraper/error/2015-08-29T18:34:37.961558.png
+saved source as /home/milan/work/josh/craigslist/scraper/error/2015-08-29T18:34:37.961558.html
+stoped webdriver
+stoped test scraper
+Traceback: Traceback (most recent call last):
+  File "/home/milan/work/josh/craigslist/scraper/tasks.py", line 16, in scrape_task
+    results = scraper.scrape(obj)
+  File "/home/milan/work/josh/craigslist/scraper/craigslist.py", line 73, in scrape
+    email = self.get_email()
+  File "/home/milan/work/josh/craigslist/scraper/craigslist.py", line 18, in get_email
+    email = self.element(By.CLASS_NAME, 'anonemail').text
+TypeError: element() missing 1 required positional argument: 'name'
+
+starting test scraper
+started webdriver
+stoped webdriver
+stoped test scraper
+Traceback: Traceback (most recent call last):
+  File "/home/milan/work/josh/craigslist/scraper/craigslist.py", line 26, in scrape
+  File "/home/milan/.virtualenvs/josh/lib/python3.4/site-packages/selenium/webdriver/remote/webdriver.py", line 208, in get
+    self.execute(Command.GET, {'url': url})
+  File "/home/milan/.virtualenvs/josh/lib/python3.4/site-packages/selenium/webdriver/remote/webdriver.py", line 194, in execute
+    response = self.command_executor.execute(driver_command, params)
+  File "/home/milan/.virtualenvs/josh/lib/python3.4/site-packages/selenium/webdriver/remote/remote_connection.py", line 395, in execute
+    return self._request(command_info[0], url, body=data)
+  File "/home/milan/.virtualenvs/josh/lib/python3.4/site-packages/selenium/webdriver/remote/remote_connection.py", line 426, in _request
+    resp = self._conn.getresponse()
+  File "/usr/lib/python3.4/http/client.py", line 1147, in getresponse
+    response.begin()
+  File "/usr/lib/python3.4/http/client.py", line 351, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.4/http/client.py", line 321, in _read_status
+    raise BadStatusLine(line)
+http.client.BadStatusLine: ''
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/milan/work/josh/craigslist/scraper/tasks.py", line 16, in scrape_task
+    results = scraper.scrape(obj)
+  File "/home/milan/work/josh/craigslist/scraper/craigslist.py", line 81, in scrape
+    raise
+  File "/home/milan/work/josh/craigslist/scraper/webdriver.py", line 93, in onerror
+    self.screenshot()
+  File "/home/milan/work/josh/craigslist/scraper/webdriver.py", line 83, in screenshot
+    self.webdriver.get_screenshot_as_file(path)
+  File "/home/milan/.virtualenvs/josh/lib/python3.4/site-packages/selenium/webdriver/remote/webdriver.py", line 753, in get_screenshot_as_file
+    png = self.get_screenshot_as_png()
+  File "/home/milan/.virtualenvs/josh/lib/python3.4/site-packages/selenium/webdriver/remote/webdriver.py", line 772, in get_screenshot_as_png
+    return base64.b64decode(self.get_screenshot_as_base64().encode('ascii'))
+  File "/home/milan/.virtualenvs/josh/lib/python3.4/site-packages/selenium/webdriver/remote/webdriver.py", line 782, in get_screenshot_as_base64
+    return self.execute(Command.SCREENSHOT)['value']
+  File "/home/milan/.virtualenvs/josh/lib/python3.4/site-packages/selenium/webdriver/remote/webdriver.py", line 194, in execute
+    response = self.command_executor.execute(driver_command, params)
+  File "/home/milan/.virtualenvs/josh/lib/python3.4/site-packages/selenium/webdriver/remote/remote_connection.py", line 395, in execute
+    return self._request(command_info[0], url, body=data)
+  File "/home/milan/.virtualenvs/josh/lib/python3.4/site-packages/selenium/webdriver/remote/remote_connection.py", line 425, in _request
+    self._conn.request(method, parsed_url.path, body, headers)
+  File "/usr/lib/python3.4/http/client.py", line 1065, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python3.4/http/client.py", line 1103, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python3.4/http/client.py", line 1061, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python3.4/http/client.py", line 906, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.4/http/client.py", line 841, in send
+    self.connect()
+  File "/usr/lib/python3.4/http/client.py", line 819, in connect
+    self.timeout, self.source_address)
+  File "/usr/lib/python3.4/socket.py", line 509, in create_connection
+    raise err
+  File "/usr/lib/python3.4/socket.py", line 500, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+starting test scraper
+started webdriver
+found email input element
+sent topuzov.work@gmail.com to email input
+sleeping 9.203702320480879 seconds
+found password input element
+sent nihuya22! to password input
+sleeping 7.253772393645829 seconds
+found login button element
+clicked login button
+sleeping 9.917171478178101 seconds
+found home link element
+clicked home link
+sleeping 5.0370373501873225 seconds
+found housing link element
+clicked housing link
+sleeping 7.513797676531838 seconds
+found minimum price input element
+sent 0 to minimum price input
+sleeping 9.040994656514616 seconds
+found maximum price input element
+sent 2000 to maximum price input
+sleeping 6.399458586402233 seconds
+found bedrooms select element
+clicked bedrooms select
+sleeping 9.986704858773798 seconds
+found 2 postings link elements
+scrolled to 0 posting element
+clicked 0 posting
+sleeping 8.695886596349107 seconds
+found reply button element
+clicked reply button
+sleeping 9.573265667855658 seconds
+found email text element
+got 1 results
+stoped webdriver
+stoped test scraper
+starting test scraper
+started webdriver
+found email input element
+sent topuzov.work@gmail.com to email input
+sleeping 8.586960593708405 seconds
+found password input element
+sent nihuya22! to password input
+sleeping 7.053702721014059 seconds
+found login button element
+clicked login button
+sleeping 6.020867773303191 seconds
+found home link element
+clicked home link
+sleeping 7.590432966720993 seconds
+found housing link element
+clicked housing link
+sleeping 7.271358364376654 seconds
+found minimum price input element
+sent 0 to minimum price input
+sleeping 6.906138090956524 seconds
+found maximum price input element
+sent 2000 to maximum price input
+sleeping 8.717002661025791 seconds
+found bedrooms select element
+clicked bedrooms select
+sleeping 7.2447343700516225 seconds
+found 2 postings link elements
+scrolled to 0 posting element
+clicked 0 posting
+sleeping 6.8282676373255375 seconds
+found reply button element
+clicked reply button
+sleeping 5.07238700806258 seconds
+found email text element
+got 1 results
+stoped webdriver
+stoped test scraper
+Traceback: Traceback (most recent call last):
+  File "/home/milan/.virtualenvs/josh/lib/python3.4/site-packages/django/db/models/query.py", line 405, in get_or_create
+    return self.get(**lookup), False
+  File "/home/milan/.virtualenvs/josh/lib/python3.4/site-packages/django/db/models/query.py", line 334, in get
+    self.model._meta.object_name
+scraper.models.DoesNotExist: Result matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/milan/.virtualenvs/josh/lib/python3.4/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+psycopg2.IntegrityError: duplicate key value violates unique constraint "scraper_result_email_key"
+DETAIL:  Key (email)=(neesanrushing@ymail.com) already exists.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/milan/work/josh/craigslist/scraper/tasks.py", line 18, in scrape_task
+    res, _ = Result.objects.get_or_create(**result)
+  File "/home/milan/.virtualenvs/josh/lib/python3.4/site-packages/django/db/models/manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/milan/.virtualenvs/josh/lib/python3.4/site-packages/django/db/models/query.py", line 407, in get_or_create
+    return self._create_object_from_params(lookup, params)
+  File "/home/milan/.virtualenvs/josh/lib/python3.4/site-packages/django/db/models/query.py", line 447, in _create_object_from_params
+    six.reraise(*exc_info)
+  File "/home/milan/.virtualenvs/josh/lib/python3.4/site-packages/django/utils/six.py", line 659, in reraise
+    raise value
+  File "/home/milan/.virtualenvs/josh/lib/python3.4/site-packages/django/db/models/query.py", line 439, in _create_object_from_params
+    obj = self.create(**params)
+  File "/home/milan/.virtualenvs/josh/lib/python3.4/site-packages/django/db/models/query.py", line 348, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/milan/.virtualenvs/josh/lib/python3.4/site-packages/django/db/models/base.py", line 734, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/home/milan/.virtualenvs/josh/lib/python3.4/site-packages/django/db/models/base.py", line 762, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "/home/milan/.virtualenvs/josh/lib/python3.4/site-packages/django/db/models/base.py", line 846, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "/home/milan/.virtualenvs/josh/lib/python3.4/site-packages/django/db/models/base.py", line 885, in _do_insert
+    using=using, raw=raw)
+  File "/home/milan/.virtualenvs/josh/lib/python3.4/site-packages/django/db/models/manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/milan/.virtualenvs/josh/lib/python3.4/site-packages/django/db/models/query.py", line 920, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "/home/milan/.virtualenvs/josh/lib/python3.4/site-packages/django/db/models/sql/compiler.py", line 974, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/milan/.virtualenvs/josh/lib/python3.4/site-packages/django/db/backends/utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/home/milan/.virtualenvs/josh/lib/python3.4/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/home/milan/.virtualenvs/josh/lib/python3.4/site-packages/django/db/utils.py", line 97, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/home/milan/.virtualenvs/josh/lib/python3.4/site-packages/django/utils/six.py", line 658, in reraise
+    raise value.with_traceback(tb)
+  File "/home/milan/.virtualenvs/josh/lib/python3.4/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+django.db.utils.IntegrityError: duplicate key value violates unique constraint "scraper_result_email_key"
+DETAIL:  Key (email)=(neesanrushing@ymail.com) already exists.
+
+
+starting test scraper
+started webdriver
+found email input element
+sent topuzov.work@gmail.com to email input
+sleeping 9.551044252694538 seconds
+found password input element
+sent nihuya22! to password input
+sleeping 8.388739094852463 seconds
+found login button element
+clicked login button
+sleeping 7.480195014204273 seconds
+found home link element
+clicked home link
+sleeping 7.277700093172884 seconds
+found housing link element
+clicked housing link
+sleeping 9.966037860425121 seconds
+found minimum price input element
+sent 0 to minimum price input
+sleeping 7.354294040928982 seconds
+found maximum price input element
+sent 2000 to maximum price input
+sleeping 9.689690890466782 seconds
+found bedrooms select element
+clicked bedrooms select
+sleeping 5.944163887617133 seconds
+found 2 postings link elements
+scrolled to 0 posting element
+clicked 0 posting
+sleeping 7.485285783898447 seconds
+found reply button element
+clicked reply button
+sleeping 6.735266142487582 seconds
+found email text element
+got 1 results
+stoped webdriver
+stoped test scraper

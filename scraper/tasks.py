@@ -1,9 +1,12 @@
+import logging
 import traceback
 
 from celery import shared_task
 
 from scraper.craigslist import CraigslistScraper
 from scraper.models import Result
+
+log = logging.getLogger('craigslist')
 
 
 @shared_task(bind=True)
@@ -12,8 +15,7 @@ def scrape_task(self, obj):
         scraper = CraigslistScraper()
         results = scraper.scrape(obj)
         for result in results:
-            res = Result(**result)
-            res.save()
+            res, _ = Result.objects.get_or_create(**result)
     except Exception:
-        print('Traceback: %s', traceback.format_exc())
+        log.error('Traceback: {}'.format(traceback.format_exc()))
         raise

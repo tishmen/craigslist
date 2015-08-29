@@ -15,12 +15,8 @@ class CraigslistScraper(Webdriver):
         return int(url.split('/')[-1].split('.html')[0])
 
     def get_email(self):
-        try:
-            email = self.element(By.CLASS_NAME, 'anonemail').text
-            log.debug('found email {}'.format(email))
-            return email
-        except Exception:
-            log.error('email not found')
+        email = self.element(By.CLASS_NAME, 'anonemail', 'email text')
+        return email.text
 
     def scrape(self, scraper):
         try:
@@ -65,7 +61,7 @@ class CraigslistScraper(Webdriver):
             random.shuffle(postings)
             count = random.randint(scraper.min_postings, scraper.max_postings)
             for i, posting in enumerate(postings[:count]):
-                self.scroll(posting)
+                self.scroll(posting, '{} posting'.format(i))
                 self.click(posting, '{} posting'.format(i))
 
                 reply = self.element(
@@ -81,8 +77,7 @@ class CraigslistScraper(Webdriver):
             log.debug('got {} results'.format(len(results)))
             return results
         except Exception:
-            self.screenshot()
-            self.source()
+            self.onerror()
             raise
         finally:
             self.stop()
