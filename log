@@ -377,3 +377,54 @@ found email text element
 got 1 results
 stoped webdriver
 stoped test scraper
+starting craigslist1 scraper
+started webdriver
+found email input element
+took screenshot as /home/milan/work/josh/craigslist/scraper/error/2015-08-31T17:10:53.386571.png
+saved source as /home/milan/work/josh/craigslist/scraper/error/2015-08-31T17:10:53.386571.html
+stoped webdriver
+stoped craigslist1 scraper
+Traceback: Traceback (most recent call last):
+  File "/home/milan/work/josh/craigslist/scraper/tasks.py", line 17, in scrape_task
+    results = scraper.scrape(obj)
+  File "/home/milan/work/josh/craigslist/scraper/craigslist.py", line 28, in scrape
+    self.send_keys(email, 'email input', scraper.email)
+AttributeError: 'Scraper' object has no attribute 'email'
+
+starting craigslist1 scraper
+started webdriver
+found email input element
+sent topuzov.work@gmail.com to email input
+sleeping 8.705342030949213 seconds
+found password input element
+sent nihuya22! to password input
+sleeping 7.096526868137628 seconds
+found login button element
+clicked login button
+sleeping 8.503994595123531 seconds
+found home link element
+clicked home link
+sleeping 7.529027644857275 seconds
+found housing link element
+clicked housing link
+sleeping 5.1073979074623 seconds
+found minimum price input element
+sent 0 to minimum price input
+sleeping 6.12419998551905 seconds
+found maximum price input element
+sent 2000 to maximum price input
+sleeping 5.190246763692132 seconds
+found bedrooms select element
+clicked bedrooms select
+sleeping 9.281666538371383 seconds
+found 2 postings link elements
+scrolled to 0 posting element
+clicked 0 posting
+sleeping 5.517935219208953 seconds
+found reply button element
+clicked reply button
+sleeping 5.118323416304346 seconds
+found email text element
+got 1 results
+stoped webdriver
+stoped craigslist1 scraper
