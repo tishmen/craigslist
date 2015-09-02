@@ -65,4 +65,4 @@ class SenderResult(models.Model):
     body = models.TextField()
 
     def __str__(self):
-        return self.message
+        return '{} to {}'.format(self.sender, self.recipient)

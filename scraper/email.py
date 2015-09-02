@@ -23,7 +23,7 @@ class EmailSender(object):
         self.connection.quit()
         log.debug('logged out of {}'.format(self.host))
 
-    def get_message(self, sender, recipient, subject, body, url):
+    def get_message(self, sender, recipient, subject, body):
         message = MIMEMultipart()
         message['From'] = sender
         message['To'] = recipient
