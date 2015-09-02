@@ -9,18 +9,19 @@ from scraper.tasks import scrape_task, send_task
 @admin.register(Account)
 class AccountAdmin(admin.ModelAdmin):
 
-    pass
+    search_fields = ('email', )
 
 
 @admin.register(Email)
 class EmailAdmin(admin.ModelAdmin):
 
-    pass
+    search_fields = ('email', )
 
 
 @admin.register(Scraper)
 class ScraperAdmin(admin.ModelAdmin):
 
+    search_fields = ('name', )
     list_display = ('name', 'account')
     actions = ('scrape', )
 
@@ -44,6 +45,7 @@ class ScraperAdmin(admin.ModelAdmin):
 @admin.register(Sender)
 class SenderAdmin(admin.ModelAdmin):
 
+    search_fields = ('name', )
     list_display = ('name', 'email')
     actions = ('send', )
 
@@ -67,10 +69,11 @@ class SenderAdmin(admin.ModelAdmin):
 @admin.register(ScraperResult)
 class ScraperResultAdmin(admin.ModelAdmin):
 
-    pass
+    list_display = ('email', 'url')
 
 
 @admin.register(SenderResult)
 class SenderResultAdmin(admin.ModelAdmin):
 
-    pass
+    search_fields = ('sender', 'recipient')
+    list_display = ('sender', 'recipient')

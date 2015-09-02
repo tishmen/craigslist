@@ -14,9 +14,9 @@ class EmailSender(object):
 
     def connect(self, user, password):
         self.connection = smtplib.SMTP(self.host, self.port)
-        self.ehlo()
-        self.starttls()
-        self.login(user, password)
+        self.connection.ehlo()
+        self.connection.starttls()
+        self.connection.login(user, password)
         log.debug('logged in to {} as {}'.format(self.host, user))
 
     def disconect(self):
@@ -28,19 +28,29 @@ class EmailSender(object):
         message['From'] = sender
         message['To'] = recipient
         message['Subject'] = subject
-        message.attach(MIMEText(body + '\n' + url, 'plain'))
+        message.attach(MIMEText(body, 'plain'))
         return message.as_string()
 
     def send(self, name, sender, password, recipients, subject, body):
         log.debug('starting {} sender'.format(name))
         messages = []
         self.connect(sender, password)
-        for recipient in recipients:
+        for recipient in recipients.all():
+            body += '\n\n' + recipient.url
             message = self.get_message(
-                sender, recipient.email, subject, body, recipient.url
+                sender, recipient.email, subject, body
             )
-            self.connection.sendmail(sender, recipient, message)
-            log.debug('sent {}'.format(message))
-            messages.append({'message': message})
+            self.connection.sendmail(sender, recipient.email, message)
+            log.debug('sent message from {} to {}'.format(
+                sender, recipient.email)
+            )
+            messages.append(
+                {
+                    'sender': sender,
+                    'recipient': recipient.email,
+                    'subject': subject,
+                    'body': body,
+                }
+            )
         self.disconect()
         return messages

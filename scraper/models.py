@@ -1,10 +1,6 @@
 from django.db import models
 
 
-###############################################################################
-# Resources
-###############################################################################
-
 class Account(models.Model):
 
     email = models.EmailField(unique=True)
@@ -22,10 +18,6 @@ class Email(models.Model):
     def __str__(self):
         return self.email
 
-
-###############################################################################
-# Action objects
-###############################################################################
 
 class Scraper(models.Model):
 
@@ -52,15 +44,14 @@ class Sender(models.Model):
         return self.name
 
 
-###############################################################################
-# Results
-###############################################################################
-
 class ScraperResult(models.Model):
 
-    id = models.BigIntegerField(primary_key=True)
-    url = models.URLField(unique=True)
-    email = models.EmailField(unique=True)
+    class Meta:
+
+        unique_together = ('url', 'email')
+
+    email = models.EmailField()
+    url = models.URLField()
 
     def __str__(self):
         return self.email
@@ -68,7 +59,10 @@ class ScraperResult(models.Model):
 
 class SenderResult(models.Model):
 
-    message = models.TextField(unique=True)
+    sender = models.CharField(max_length=100)
+    recipient = models.CharField(max_length=100)
+    subject = models.TextField()
+    body = models.TextField()
 
     def __str__(self):
         return self.message
