@@ -4,7 +4,6 @@ import time
 import random
 from datetime import datetime
 
-from pyvirtualdisplay import Display
 from selenium import webdriver
 
 from django.conf import settings
@@ -22,20 +21,15 @@ class Webdriver(object):
         self.stamp = datetime.now().isoformat()
 
     def start(self):
-        self.display = Display(
-            visible=0, size=(self.display_width, self.display_height)
+        self.webdriver = webdriver.PhantomJS(
+            service_args=['--ssl-protocol=any']
         )
-        self.display.start()
-        log.debug('started virtual display')
-        self.webdriver = webdriver.Firefox()
         self.webdriver.maximize_window()
         log.debug('started webdriver')
 
     def stop(self):
         self.webdriver.quit()
         log.debug('stoped webdriver')
-        self.display.stop()
-        log.debug('stoped virtual display')
 
     def sleep(self):
         seconds = random.uniform(self.min_sleep, self.max_sleep)

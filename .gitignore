@@ -3,6 +3,7 @@ migrations
 *.pyc
 *.sublime-project
 *.sublime-workspace
-log
+logs
 scraper/error
 *.pid
+ghostdriver.log
