@@ -24,6 +24,7 @@ class Scraper(models.Model):
     name = models.CharField(max_length=100, unique=True)
     account = models.ForeignKey('Account')
     posting_count = models.IntegerField(default=1)
+    city = models.CharField(max_length=100, default='portland')
     min_price = models.IntegerField(default=0)
     max_price = models.IntegerField(default=2000)
     bedroom_count = models.IntegerField(default=2)

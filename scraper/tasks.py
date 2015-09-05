@@ -18,6 +18,7 @@ def scrape_task(self, scraper_obj):
             scraper_obj.name,
             scraper_obj.account.email,
             scraper_obj.account.password,
+            scraper_obj.city,
             scraper_obj.min_price,
             scraper_obj.max_price,
             scraper_obj.bedroom_count,

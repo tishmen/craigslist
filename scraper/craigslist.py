@@ -22,8 +22,8 @@ class CraigslistScraper(Webdriver):
             return None
 
     def scrape(
-            self, name, email, password, min_price, max_price, bedroom_count,
-            posting_count):
+            self, name, email, password, city, min_price, max_price,
+            bedroom_count, posting_count):
         try:
             log.debug('starting {} scraper'.format(name))
             self.start()
@@ -42,15 +42,7 @@ class CraigslistScraper(Webdriver):
             login_button = self.element(By.TAG_NAME, 'button', 'login button')
             self.click(login_button, 'login button')
 
-            home_link = self.element(
-                By.CSS_SELECTOR, '.bchead > a', 'home link'
-            )
-            self.click(home_link, 'home link')
-
-            housing_link = self.element(
-                By.CLASS_NAME, 'apa', 'housing link'
-            )
-            self.click(housing_link, 'housing link')
+            self.get('http://{}.craigslist.org/search/apa'.format(city))
 
             min_price_input = self.element(
                 By.CSS_SELECTOR, '.flatinput.min', 'minimum price input'
