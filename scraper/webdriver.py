@@ -25,6 +25,8 @@ class Webdriver(object):
             service_args=['--ssl-protocol=any']
         )
         self.webdriver.maximize_window()
+        self.webdriver.set_page_load_timeout(90)
+        self.webdriver.implicitly_wait(10)
         log.debug('started webdriver')
 
     def stop(self):
