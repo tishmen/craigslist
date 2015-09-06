@@ -5,6 +5,9 @@ import random
 from datetime import datetime
 
 from selenium import webdriver
+from selenium.common.exceptions import TimeoutException
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
 
 from django.conf import settings
 
@@ -14,8 +17,8 @@ log = logging.getLogger('craigslist')
 class Webdriver(object):
 
     def __init__(self):
-        self.display_width = 1920
-        self.display_height = 1080
+        self.page_load_timeout = 90
+        self.implicitly_wait = 10
         self.min_sleep = 5
         self.max_sleep = 10
         self.stamp = datetime.now().isoformat()
@@ -25,8 +28,8 @@ class Webdriver(object):
             service_args=['--ssl-protocol=any']
         )
         self.webdriver.maximize_window()
-        self.webdriver.set_page_load_timeout(90)
-        self.webdriver.implicitly_wait(10)
+        self.webdriver.set_page_load_timeout(self.page_load_timeout)
+        self.webdriver.implicitly_wait(self.implicitly_wait)
         log.debug('started webdriver')
 
     def stop(self):
@@ -39,7 +42,11 @@ class Webdriver(object):
         time.sleep(seconds)
 
     def get(self, url):
-        self.webdriver.get(url)
+        try:
+            self.webdriver.get(url)
+        except TimeoutException:
+            body = self.element(By.TAG_NAME, 'body')
+            self.send_keys(body, 'body', Keys.ESCAPE)
         log.debug('went to {}'.format(url))
         self.sleep()
 
