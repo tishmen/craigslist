@@ -4,6 +4,6 @@ migrations
 *.sublime-project
 *.sublime-workspace
 logs
-scraper/error
+scraper/errors
 *.pid
 ghostdriver.log
